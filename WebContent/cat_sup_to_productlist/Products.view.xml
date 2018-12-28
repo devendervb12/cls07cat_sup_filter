@@ -1,0 +1,59 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="cat_sup_to_productlist.Products" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+			<Select items="{/Suppliers}" 
+			id="idSupplierSelect">
+			   <items>
+			      <core:Item text="{CompanyName}" key="{SupplierID}"/>
+			   </items>
+			</Select>
+			
+			<Select items="{/Categories}" 
+			id="idCatSelect">
+			   <items>
+			      <core:Item text="{CategoryName}" key="{CategoryID}"/>
+			   </items>
+			</Select>
+			<Button text = "Filter" press="onPress"/>
+			
+			<Table items="{/Products}" 
+	           id="idTable"
+	           >
+	          <columns>
+	              <Column>
+	                 <header>
+	                    <Text text="Product ID"/>
+	                 </header>
+	              </Column>
+	              <Column>
+	                 <header>
+	                    <Text text="Product Name"/>
+	                 </header>
+	              </Column>
+	              <Column>
+	                 <header>
+	                    <Text text="Supplier ID"/>
+	                 </header>
+	              </Column>
+	              
+	               <Column>
+	                 <header>
+	                    <Text text="Category ID"/>
+	                 </header>
+	              </Column>
+	          </columns>
+	          <items>
+	             <ColumnListItem>
+	                  <cells>
+	                       <Text text="{ProductID}"/>
+	                       <Text text="{ProductName}"/>
+	                       <Text text="{SupplierID}"/>
+	                       <Text text="{CategoryID}"/>
+	                  </cells>
+	             </ColumnListItem>
+	          </items>
+	       </Table>
+		</content>
+	</Page>
+</core:View>
